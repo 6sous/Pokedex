@@ -16,3 +16,13 @@
   font-size: 4rem;
   letter-spacing: 0.5rem;
 }
+
+.buttons{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.PreviousButt{
+  transform: rotate(180deg);
+}

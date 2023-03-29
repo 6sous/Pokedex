@@ -3,11 +3,21 @@ import PokemonCard from './components/PokemonCard';
 import NextButton from './components/NextButton';
 import PreviousButton from './components/PreviousButton';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
 function App() {
   
+  useEffect(
+    () =>  {
+      alert("hello pokemon trainer :)")
+    }, 
+    []
+ );
+
+  // pokemonList[3].alert("pika pika!!")
+
   const pokemonList = [
     {
       name: "bulbasaur",
@@ -44,12 +54,17 @@ function App() {
     setPokemonIndex(pokemonIndex - 1)
   }
 
+  const Pikalert = () => {
+    pokemonIndex === 3? alert("pikaka!!"): null
+  }
+
   return (
     <div>
       <PokemonCard pokemon = {pokemonList[pokemonIndex]} />
       <div className='buttons' >
-        {pokemonIndex>0? <PreviousButton Previous= {PreviousPokemonClick} /> : null}
-        {pokemonIndex<pokemonList.length-1? <NextButton Next = {NextPokemonClick} /> :null}
+        {pokemonIndex>0? <PreviousButton Previous= {PreviousPokemonClick} Alert = {Pikalert} /> : null}
+        {pokemonIndex<pokemonList.length-1? <NextButton Next = {NextPokemonClick} Alert = {Pikalert} /> :null}
+
         
       </div>
     </div>

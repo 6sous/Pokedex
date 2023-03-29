@@ -1,5 +1,9 @@
 function PreviousButton({Previous}) {
-    return <button onClick= {Previous} >{"<"}</button>   
+    
+    return (<button onClick= {Previous} >{"<"}</button> 
+    
+    )
+
 }
 
 export default PreviousButton

@@ -1,5 +1,5 @@
-function NextButton() {
-    return <button>{">"}</button>   
+function NextButton({Next}) {
+    return <button onClick={Next} >{">"}</button>   
 }
 
 export default NextButton

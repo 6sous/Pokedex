@@ -2,6 +2,7 @@ import './App.css'
 import PokemonCard from './components/PokemonCard';
 import NextButton from './components/NextButton';
 import PreviousButton from './components/PreviousButton';
+import { useState } from 'react';
 
 
 
@@ -32,14 +33,24 @@ function App() {
       name: "mew",
     },
   ];
+
+  const [pokemonIndex, setPokemonIndex] = useState(0)
   
+  const NextPokemonClick = () => {
+    setPokemonIndex(pokemonIndex + 1)
+  }
+
+  const PreviousPokemonClick = () => {
+    setPokemonIndex(pokemonIndex - 1)
+  }
 
   return (
     <div>
-      <PokemonCard pokemon = {pokemonList[1]} />
-      <div className='buttons'>
-        <PreviousButton />
-        <NextButton />
+      <PokemonCard pokemon = {pokemonList[pokemonIndex]} />
+      <div className='buttons' >
+        {pokemonIndex<pokemonList.length && pokemonIndex>0? <PreviousButton Previous= {PreviousPokemonClick} /> : null}
+        {pokemonIndex >= 0 && pokemonIndex<pokemonList.length-1? <NextButton Next = {NextPokemonClick} /> :null}
+        
       </div>
     </div>
   )

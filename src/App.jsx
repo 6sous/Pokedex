@@ -48,8 +48,8 @@ function App() {
     <div>
       <PokemonCard pokemon = {pokemonList[pokemonIndex]} />
       <div className='buttons' >
-        {pokemonIndex<pokemonList.length && pokemonIndex>0? <PreviousButton Previous= {PreviousPokemonClick} /> : null}
-        {pokemonIndex >= 0 && pokemonIndex<pokemonList.length-1? <NextButton Next = {NextPokemonClick} /> :null}
+        {pokemonIndex>0? <PreviousButton Previous= {PreviousPokemonClick} /> : null}
+        {pokemonIndex<pokemonList.length-1? <NextButton Next = {NextPokemonClick} /> :null}
         
       </div>
     </div>

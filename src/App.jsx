@@ -35,15 +35,13 @@ function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0)
   
-  const PokemonClick = (num) => {
-    setPokemonIndex(num)
-  }
+ 
 
   return (
     <div>
       <PokemonCard pokemon = {pokemonList[pokemonIndex]} />
       <div className='buttons' >
-        {pokemonList.map((pokemon,index)=> (<Navbar index = {index} key = {pokemon.name} DisplayCard = {PokemonClick} name = {pokemon.name}/>))}
+        <Navbar pokemonList = {pokemonList} set = {setPokemonIndex} />
         
       </div>
     </div>
